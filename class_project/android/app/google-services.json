@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "262758795716",
+    "firebase_url": "https://perfect-stock-234407.firebaseio.com",
+    "project_id": "perfect-stock-234407",
+    "storage_bucket": "perfect-stock-234407.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262758795716:android:23500f9e6ae0063b",
+        "android_client_info": {
+          "package_name": "com.flutter.class_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262758795716-fnan1j1utodgkkicnujllnvm2slslksf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutter.class_project",
+            "certificate_hash": "d3d661dad40d9052ba0821379448e5e58ddb52dc"
+          }
+        },
+        {
+          "client_id": "262758795716-qcphti185gs2p7tb1d0604kq9dukg4dc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi0Hpldrex8hN77rnZI4TRgbUVrnPQ2AI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262758795716-qcphti185gs2p7tb1d0604kq9dukg4dc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
