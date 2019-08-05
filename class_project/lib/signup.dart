@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'login.dart';
 
 
 
@@ -113,12 +115,9 @@ class _SignUpClassState extends State<SignUpClass> {
 
                     Container(
                       alignment: Alignment.bottomRight,
-                      child: RaisedButton(onPressed: (){
-                        if (signupkey.currentState.validate()) {
-                          return  Navigator.pop(context);
-
-                        }
-                      },  color: Colors.green,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),  child: Text('Register', style: TextStyle(color: Colors.white),),),),
+                      child: RaisedButton(onPressed:(){}, //signUpWithEmailPassword,
+                        color: Colors.green,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        child: Text('Register', style: TextStyle(color: Colors.white),),),),
 
                     Container(child: Column(children: <Widget>[
 
@@ -177,6 +176,24 @@ class _SignUpClassState extends State<SignUpClass> {
       return null;
   }
 
+
+// Sign Up Function
+/*
+  Future<void> signUpWithEmailPassword()async {
+    final formstate = signupkey.currentState;
+    // validate failed
+    if (formstate.validate()){
+      formstate.save();
+      try {
+        AuthResult user = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _email, password: _password);
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>LogInClass()));
+        print('Email is $email + Password is $password');
+      } catch (e) {
+        print(e.message);
+      }
+    }
+  }
+*/
 
 
 

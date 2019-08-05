@@ -1,5 +1,12 @@
+import 'package:class_project/validators.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'provider.dart';
 import 'signup.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'home_page.dart';
 
 
 class LogInClass extends StatefulWidget {
@@ -12,6 +19,10 @@ class _LogInClassState extends State<LogInClass> {
   final loginkey = GlobalKey<FormState>();
   final email = TextEditingController();
   final password = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  String _email, _password;
+  //FormType _formType = FormType.login;
 
   @override
   Widget build(BuildContext context) {
@@ -98,6 +109,7 @@ class _LogInClassState extends State<LogInClass> {
                                       hintText: 'Enter Email Here'),
                                   validator: validateEmail,
                                   controller: email,
+                                  onSaved: (value) => _email=value,
                                 ),
                               ),
 
@@ -121,6 +133,7 @@ class _LogInClassState extends State<LogInClass> {
                                     }
                                   },
                                   controller: password,
+                                  onSaved: (value) => _password=value,
                                 ),
                               ),
                             ],
@@ -130,17 +143,8 @@ class _LogInClassState extends State<LogInClass> {
                         Container(
                           alignment: Alignment.bottomRight,
                           child: RaisedButton(
-                            onPressed: () {
-                              if (loginkey.currentState.validate()) {
-                                print(
-                                    'Your Email is "($email)" and Password is "($password)"');
-                                //Navigator.push(
-                                  //context,
-                                 // MaterialPageRoute(
-                                   //   builder: (context) =>  NewsFeedClass()),
-                                //);
-                              }
-                            },
+                            onPressed: (){},
+
                             color: Colors.green,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
@@ -203,4 +207,25 @@ class _LogInClassState extends State<LogInClass> {
     else
       return null;
   }
+
+
+
+
+
+
+  /*Future<void> signInWithEmailPassword()async {
+    final formstate = loginkey.currentState;
+    // validate failed
+    if (formstate.validate()){
+      formstate.save();
+      try {
+        AuthResult user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>HomePageClass()));
+        print('Email is $email + Password is $password');
+      } catch (e) {
+        print(e.message);
+      }
+    }
+  }*/
+
 }
